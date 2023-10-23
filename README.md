@@ -1,4 +1,4 @@
-# Leon & Stem Algorithms
+# Syndrome decoding Algorithms: Leon’s ISD and Stern’s ISD 
 
 ## **Project Coordinator: Țiplea Ferucio Laurențiu**
 
