@@ -7,4 +7,7 @@
 - NĂPÎRLICĂ V. MARIAN-DANIEL (marian_daniel_14@yahoo.com)
 - PRICOPI M.C. EDUARD-ANTONIO	
   
+ ## **State of the art document**
  https://docs.google.com/document/d/1cb3PcA_82nNOTvxurRqkXrFo-runqz8pqR6y9ysF1qk/edit
+
+
