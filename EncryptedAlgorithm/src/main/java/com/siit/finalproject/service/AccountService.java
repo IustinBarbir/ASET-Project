@@ -79,7 +79,7 @@ public class AccountService {
     }
 
     private void printEncryptMessage(int passwordLength, EncryptMessageEntity encryptMessage) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/DODO/Git/final-project/src/main/resources/encryptMessage.txt", false));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/DODO/Git/EncryptedAlgorithm/src/main/resources/encryptMessage.txt", false));
 
         for(int i=0;i< passwordLength;i++){
             int g = encryptMessage.getEncryptMessageElement(i);
@@ -114,7 +114,7 @@ public class AccountService {
 
 
     public void printPublicKey() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/DODO/Git/final-project/src/main/resources/publicKey.txt", false));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/DODO/Git/EncryptedAlgorithm/src/main/resources/publicKey.txt", false));
 
         for(int i=0;i< publicKey.getRows();i++){
             for(int j=0;j< publicKey.getColumns();j++)
@@ -137,7 +137,7 @@ public class AccountService {
 
     public static void createGeneratorMatrix(GeneratorMatrixEntity generatorMatrix, int rows, int columns) throws IOException {
 
-        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/final-project/src/main/resources/generatorMatrix.txt"));
+        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/EncryptedAlgorithm/src/main/resources/generatorMatrix.txt"));
         String line;
         generatorMatrix.setRows(rows);
         generatorMatrix.setColumns(columns);
@@ -156,7 +156,7 @@ public class AccountService {
 
     public static void createP_Matrix(P_Entity pMatrix, GeneratorMatrixEntity generatorMatrix) throws IOException {
 
-        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/final-project/src/main/resources/P.txt"));
+        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/EncryptedAlgorithm/src/main/resources/P.txt"));
         String line;
         int rows = generatorMatrix.getColumns();
         int columns = generatorMatrix.getColumns();
@@ -178,7 +178,7 @@ public class AccountService {
 
     public static void createS_Matrix(S_Entity sMatrix, GeneratorMatrixEntity generatorMatrix) throws IOException {
 
-        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/final-project/src/main/resources/S.txt"));
+        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/EncryptedAlgorithm/src/main/resources/S.txt"));
         String line;
         int rows = generatorMatrix.getRows();
         int columns = generatorMatrix.getRows();
@@ -234,6 +234,6 @@ public class AccountService {
                 else
                     auxMatrix[i][j] = 1;
             }
-        }
+        } 
     }
 }
