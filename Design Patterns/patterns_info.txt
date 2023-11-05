@@ -1,0 +1,21 @@
+1. Chain of Responsibility Pattern:
+"Chain of responsibility pattern is used to achieve loose coupling in software design where a request from the client is passed to a chain of objects to process them" (GeeksforGeeks)
+Flexibility: Using the Chain of Responsibility pattern allows us to add, remove, or change the order of the multiple steps involved in the project.
+Encapsulation:  Makes the code more modular and maintainable. It also follows the Single Responsibility Principle, as each handler is responsible for one specific task.
+Decoupling: Separates the sender of a request from its receivers, which allows us to handle various decoding tasks independently
+
+2. Factory Method Pattern:
+"The Factory Method Design Pattern is a creational pattern that provides an interface for creating objects but allows subclasses to decide which class to instantiate" (Pentalog)
+It allows the sub-classes to choose the type of objects to create.
+  Advantages:
+- Encapsulates object creation, making it easy to change or extend the created objects.
+- Promotes loose coupling between object creators and the created objects.
+For out project, we can use Factory Method pattern to encapsulate the creation of matrix and bucket objects, making it easier to switch between different matrix implementations or bucket structures.
+
+3. Observer Pattern:
+"The observer design pattern enables a subscriber to register with and receive notifications from a provider. It's suitable for any scenario that requires push-based notification." (Microsoft)
+The Observer pattern is useful for implementing event handling and notifying multiple objects about changes or events. In the context of the Stern's ISD algorithm project, we can apply this pattern to notify components about algorithm progress, results, or errors.
+  Advantages:
+- Decouples the subject from its observers, enabling changes in one without affecting the other.
+- Supports broadcasting events and allows multiple components to respond to changes independently.
+In our project, we can apply the Observer pattern to monitor the algorithm's progress, count collisions, track execution time, and notify the user interface or other components about results, providing real-time feedback during the execution of the algorithm.
