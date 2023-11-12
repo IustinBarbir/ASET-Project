@@ -1,0 +1,18 @@
+Singleton Pattern (Parțial):
+
+	Clasa AccountService este marcată cu @Service, indicând faptul că este o componentă gestionată de Spring, iar Spring, în general, gestionează aceste clase ca singletons. Cu toate acestea, nu este sigur că toate obiectele sunt singletoni. De exemplu, GeneratorMatrixEntity, P_Entity, S_Entity, PublicKeyEntity, EncryptMessageEntity sunt instanțiate ca variabile de membru în AccountService. Dacă acestea sunt doar date de configurare și nu au stări interne, poate fi considerat un singleton parțial. Dacă au stări interne, poate fi necesar să fie gestionate diferit.
+
+
+Strategy Pattern (Parțial):
+
+	Metodele createG_P și createS_G sunt implementări ale unei strategii specifice, în cadrul metodei createPublicKey. Aceasta se aseamănă cu Strategy Pattern, unde este o strategie (multiplyG_P și multiplyS_G) și se utilizeaza într-un context (createPublicKey). Totuși, în mod tradițional, Strategy Pattern implică definirea unei interfețe sau a unei clase abstracte pentru strategii, iar contextul (în acest caz, createPublicKey) să accepte acea interfață sau clasă abstractă.
+
+
+Factory Method Pattern (Posibil):
+
+	Nu este o implementare unui Factory Method explicit în acest cod, dar sunt apeluri la metode de creație cum ar fi createGeneratorMatrix, createP_Matrix, createS_Matrix, createPublicKey. Aceste metode sunt responsabile pentru crearea și inițializarea unor entități specifice. Dacă aceste metode ar fi definite într-o interfață sau clasă abstractă comună, iar clasele specifice ar implementa această interfață sau ar extinde această clasă abstractă, atunci ar putea fi considerat un Factory Method Pattern.
+
+
+Template Method Pattern (Posibil):
+
+	Metoda createEncryptMessage urmeaza un șablon similar, unde este definită o metodă (createEncryptMessage) care definește scheletul unei anumite operații, iar pasul specific algoritmului este lăsat subclaselor sau implementatorilor (prin apelul metodelor precum printEncryptMessage, createRandomError).
