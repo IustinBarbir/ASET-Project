@@ -8,26 +8,42 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @RestController
 @RequestMapping("/account")
 public class AccountController {
-    private final AccountService service;
+    private AccountService service;
 
-    public AccountController(AccountService service) {
+    public AccountController(AccountService service) throws IOException {
         this.service = service;
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addDestination(@Valid @RequestBody AccountEntity account) throws IOException
+    public ResponseEntity<String> addAccount(@Valid @RequestBody AccountEntity account) throws IOException
     {
 
-        service.addAccount(account);
-        return new ResponseEntity<>("Account has been added: " , HttpStatus.OK);
+        try {
+            service.addAccount(account);
+            return new ResponseEntity<>("Account has been added: " , HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Invalid account details", HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    @GetMapping("/password")
+    public ResponseEntity<String> decryptedPassword() throws IOException
+    {
+        try {
+            String password = service.decryptedPassword();
+            return new ResponseEntity<>("Password is : " + password, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Invalid file", HttpStatus.BAD_REQUEST);
+        }
+
     }
 }
