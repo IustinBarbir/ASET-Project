@@ -17,11 +17,32 @@ public class AccountService {
     S_Entity sEntity = new S_Entity();
     PublicKeyEntity publicKey = new PublicKeyEntity();
     EncryptMessageEntity encryptMessage = new EncryptMessageEntity();
+    AccountEntity accountEntity = new AccountEntity();
+
+
+    public String decryptedPassword() throws IOException
+    {
+        BufferedReader file = new BufferedReader(new FileReader("C:/Users/DODO/Git/EncryptedAlgorithm/src/main/resources/encryptMessageForDecryption.txt"));
+        String line;
+
+        line = file.readLine();
+        String[] encryptedPassword = line.split(" ");
+
+        multiplyS_G(encryptedPassword);
+        multiplyG_P(encryptedPassword);
+
+        return getMessage(accountEntity);
+    }
+
+
+
 
     public void addAccount(AccountEntity account) throws IOException {
 
         String password = account.getPassword();
 
+        accountEntity.setPassword(account.getPassword());
+        accountEntity.setUsername(account.getUsername());
         createGeneratorMatrix(generatorMatrix,7,10);
         createP_Matrix(pEntity,generatorMatrix);
         createS_Matrix(sEntity,generatorMatrix);
@@ -234,6 +255,16 @@ public class AccountService {
                 else
                     auxMatrix[i][j] = 1;
             }
-        } 
+        }
+    }
+
+    private void multiplyG_P(String[] encryptedPassword) {
+    }
+
+    private void multiplyS_G(String[] encryptedPassword) {
+
+    }
+    private String getMessage(AccountEntity account) {
+        return accountEntity.getPassword();
     }
 }
