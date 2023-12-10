@@ -1,6 +1,5 @@
 from security_aspect import log_sensitive_access
 
-@log_sensitive_access
 def read_public_key():
     with open('publicKey.txt', 'r') as file:
         public_key = []
