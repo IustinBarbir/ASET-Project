@@ -1,0 +1,26 @@
+Method of Procedure for 'recover_password':
+Step 1: Initialize variables.
+Explanation: Set up the necessary variables for the function.
+Step 2: Iterate through possible passwords.
+Explanation: Iterate through the list of possible passwords.
+Step 3: Calculate matrix multiplication.
+Explanation: Use matrix multiplication to check each password.
+Step 4: Check for a match.
+Explanation: Verify if the result matches the encrypted message.
+Step 5: Return the recovered password if found.
+Explanation: If a match is found, return the recovered password.
+Step 6: Return None if no match is found.
+Explanation: If no match is found, return None as the recovered password.
+Method of Procedure for 'recover_password':
+Step 1: Initialize variables.
+Explanation: Set up the necessary variables for the function.
+Step 2: Iterate through possible passwords.
+Explanation: Iterate through the list of possible passwords.
+Step 3: Calculate matrix multiplication.
+Explanation: Use matrix multiplication to check each password.
+Step 4: Check for a match.
+Explanation: Verify if the result matches the encrypted message.
+Step 5: Return the recovered password if found.
+Explanation: If a match is found, return the recovered password.
+Step 6: Return None if no match is found.
+Explanation: If no match is found, return None as the recovered password.
